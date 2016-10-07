@@ -21,7 +21,10 @@ class ViewController: UIViewController, AVAudioRecorderDelegate {
     
     /// 22. 產生AVAudioPlayer
     var audioPlayer: AVAudioPlayer?
-
+    
+    /////////////////////
+    /// Recodr Button ///
+    /////////////////////
     @IBAction func myRecode(_ sender: UIButton) {
         
         /// 9. 判斷是否正在在錄音
@@ -105,14 +108,6 @@ class ViewController: UIViewController, AVAudioRecorderDelegate {
         }
     }
     
-    /// 23. 按下按鈕，播放錄音檔
-    @IBAction func myPlay(_ sender: UIButton) {
-        
-        audioPlayer?.stop()
-        audioPlayer?.currentTime = 0
-        audioPlayer?.play()
-    }
-    
     /// 20. 錄完要做的事
     func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
         if flag == true {
@@ -124,6 +119,17 @@ class ViewController: UIViewController, AVAudioRecorderDelegate {
                 print(" 🚫 Something Wrong! 🚫 ")
             }
         }
+    }
+    
+    ///////////////////
+    /// Play Button ///
+    ///////////////////
+    /// 23. 按下按鈕，播放錄音檔
+    @IBAction func myPlay(_ sender: UIButton) {
+        
+        audioPlayer?.stop()
+        audioPlayer?.currentTime = 0
+        audioPlayer?.play()
     }
 
     override func didReceiveMemoryWarning() {
